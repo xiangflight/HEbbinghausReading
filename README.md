@@ -5,3 +5,8 @@
 
 ![截图](https://github.com/xiangflight/HEbbinghausReading/blob/master/snapshot.png)
 
+## How to use
+
+1. input book title, pages and days
+2. click button to generate HEbbinghaus reading plan
+
