@@ -7,6 +7,7 @@
 
 ## How to use
 
-1. input book title, pages and days
-2. click button to generate HEbbinghaus reading plan
+1. git clone or download the project to local and open file **index.html**
+2. input book **title**, **pages** and **days**
+3. click button(**Generate Plan**) to generate HEbbinghaus reading plan
 
