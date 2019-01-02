@@ -3,5 +3,5 @@
 
 ## SnapShot
 
-![截图](https://github.com/xiangflight/HEbbinghausReading/snapshot.png)
+![截图](https://github.com/xiangflight/HEbbinghausReading/blob/master/snapshot.png)
 
