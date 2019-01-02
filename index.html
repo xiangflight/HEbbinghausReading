@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./index.css">
+	<title>H.Ebbinghaus Reading</title>
+</head>
+
+<body>
+	<p>HEbbinghaus Reading</p>
+	<div id="app">
+		<section v-show="showForm">
+			<div id="form">
+				Title
+				<input type="text" v-model="newBook.name">
+				<br> 
+				Pages
+				<input type="text" v-model.number="newBook.page_all">
+				<br> 
+				Finish in
+                <input type="text" v-model.number="newBook.days">days
+				<br>
+				<button @click="submitMsg">Generate Plan</button>
+			</div>
+		</section>
+		<hr />
+		<!--表格  -->
+		<p v-for="(book) in books">《{{book.name}}》</p>
+		<table class="book-table" v-for="(book) in books" border="1">
+			<tr class="table-head">
+				<td>Day</td>
+				<td>Reading Process (Page)</td>
+			</tr>
+			<tr class="table-content" v-for="(plan, index) in book.plans">
+				<td>Day {{ index + 1 }}</td>
+				<td>
+					<ul>
+						<li v-for="todo in plan">
+							{{ todo }}
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="./index.js"></script>
+</body>
+
+</html>
