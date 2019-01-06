@@ -23,12 +23,13 @@ let vm = new Vue({
         eachDay = Math.floor(page / days) + 1;
       }
       let plans = this.newBook.plans;
-      for (let i = 0; i < days; i++) {
-        if (plans[i] == undefined) {
+      let startPage = 1;
+      let i = 0;
+      while (startPage < page) {
+      	if (plans[i] == undefined) {
           plans[i] = [];
         }
-        let startPage = 1 + i * eachDay;
-        let endPage = 1 + (i + 1) * eachDay > page ? page: 1 + (i + 1) * eachDay;
+        let endPage = startPage + eachDay < page ? startPage + eachDay: page;
         let read = startPage + '-' + endPage;
         day = read + "（早）";
         night = read + "（晚）";
@@ -50,6 +51,8 @@ let vm = new Vue({
         plans[i + 3].push(read);
         plans[i + 7].push(read);
         plans[i + 14].push(read);
+        startPage = endPage + 1;
+        i++;
       }
     },
     submitMsg(){
