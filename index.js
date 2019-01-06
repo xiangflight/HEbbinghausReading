@@ -26,15 +26,13 @@ let vm = new Vue({
       let startPage = 1;
       let i = 0;
       while (startPage < page) {
-      	if (plans[i] == undefined) {
-          plans[i] = [];
-        }
-        let endPage = startPage + eachDay < page ? startPage + eachDay: page;
+        let endPage = (startPage + eachDay - 1) < page ? startPage + eachDay - 1: page;
         let read = startPage + '-' + endPage;
         day = read + "（早）";
         night = read + "（晚）";
-        plans[i].push(day);
-        plans[i].push(night)
+        if (plans[i] == undefined) {
+          plans[i] = [];
+        }
         if (plans[i + 1] == undefined) {
           plans[i + 1] = [];  
         }
@@ -47,6 +45,8 @@ let vm = new Vue({
         if (plans[i + 14] == undefined) {
           plans[i + 14] = [];
         }
+        plans[i].push(day);
+        plans[i].push(night)
         plans[i + 1].push(read);
         plans[i + 3].push(read);
         plans[i + 7].push(read);
